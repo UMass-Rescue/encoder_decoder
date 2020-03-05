@@ -1,6 +1,6 @@
-from dtypes import InputTypes, OutputTypes
-from dtypes_encode_decode import *
-from dtypes_extract_wrap import *
+from .dtypes import InputTypes, OutputTypes
+from .dtypes_encode_decode import *
+from .dtypes_extract_wrap import *
 
 decoders = {
     InputTypes.STRING: identity, # can be an identity function if decoding not required. 
