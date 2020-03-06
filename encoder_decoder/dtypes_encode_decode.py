@@ -1,5 +1,5 @@
 import numpy as np
-
+import pdb
 def float_ndarray_to_dict(arr):
     return np_arr_to_dict(arr)
 
@@ -16,11 +16,12 @@ def string_to_float(string):
     return float(string)
 
 def np_arr_to_dict(arr):
-    return {'str': np.ndarray.tostring(arr),
+    # pdb.set_trace()
+    return {'arr': arr.tolist(),
         'shape':list(arr.shape),
         'dtype':str(arr.dtype)
     }
 
 def dict_to_np_arr(data):
-    arr, shape, dtype = data['str'], data['shape'], data['dtype']
-    return np.fromstring(arr, dtype=dtype).reshape(tuple(shape))
+    arr, shape, dtype = data['arr'], data['shape'], data['dtype']
+    return np.array(arr, dtype=dtype).reshape(tuple(shape))
